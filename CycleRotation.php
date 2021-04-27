@@ -1,15 +1,12 @@
 <?php
-
-function arrayRotation($arr, $val){
-
-   do{
-      array_push($arr, array_shift($arr));
-      $val--;
-   } while ($val > 0);
-
-   return $arr;
+//100% all tests were positive.
+function solution($A, $K)
+{
+   // write your code in PHP7.0
+   if(empty($A) || $K == 0) return $A;
+   while ($K > 0) {
+      array_unshift($A, array_pop($A));
+      $K--;
+   }
+   return $A;
 }
-$anArray= [1,2,3,4,5];
-$res = arrayRotation($anArray, 3);
-
-print_r($res);
